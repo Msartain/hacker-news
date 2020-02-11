@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getStoryIds, getStory } from '../services/hnAPI';
+import { getStoryIds } from '../services/hnAPI';
 import { Story } from '../components/Story'
 
 export const StoriesContainer = () => {
@@ -10,6 +10,6 @@ export const StoriesContainer = () => {
     }, [])
 
     return storyIds.map(storyId => (
-        <Story storyId={storyId} />
+        <Story key={storyId} storyId={storyId} />
     ));
 }
