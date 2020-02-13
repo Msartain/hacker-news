@@ -6,6 +6,7 @@ import {
   StoryMeta,
   StoryMetaElement
 } from "../styles/storyStyles";
+import { mapTime } from '../mappers/mapperTime';
 
 export const Story = ({ storyId }) => {
   const [story, setStory] = useState({});
@@ -25,12 +26,12 @@ export const Story = ({ storyId }) => {
 
       <StoryMeta>
         <span className="story__by" data-testid="story-by">
-          <StoryMetaElement color="#000">By:</StoryMetaElement>
+          <StoryMetaElement color="#000">By: </StoryMetaElement>
           {story.by}
         </span>
         <span className="story__time" data-testid="story-time">
-          <StoryMetaElement color="#000">Posted:</StoryMetaElement>
-            {' '}{story.time}
+          <StoryMetaElement color="#000">Posted: </StoryMetaElement>
+            {mapTime(story.time)} ago
         </span>
       </StoryMeta>
 
