@@ -1,4 +1,4 @@
-import React, { useEffect, useState, memo } from "react";
+import React, { useEffect, useState } from "react";
 import { getStoryIds } from "../services/hnAPI";
 import { Story } from "../components/Story";
 import {
@@ -12,7 +12,7 @@ export const StoriesContainer = () => {
   const [storyIds, setStoryIds] = useState([]);
 
   useEffect(() => {
-      console.log('count', count);
+    console.log("count", count);
     getStoryIds().then(data => setStoryIds(data));
   }, []);
 
